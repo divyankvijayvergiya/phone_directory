@@ -3,21 +3,26 @@ import Header from './Header';
 import "./App.css";
 
 class App extends Component {
-  
+  constructor(){
+    super();
+    this.state={
+      subscriberListToShow: []
+    }
+  }
  
   render() {
-    let subscribers = [
-      {
-        id: 1,
-        name: "Shilpa",
-        phone:"0000000000"
-      },
-      {
-        id: 2,
-        name: "Srishti",
-        phone:"0000000000"
-      }
-  ];
+  //   let subscribers = [
+  //     {
+  //       id: 1,
+  //       name: "Shilpa",
+  //       phone:"0000000000"
+  //     },
+  //     {
+  //       id: 2,
+  //       name: "Srishti",
+  //       phone:"0000000000"
+  //     }
+  // ];
     return (
       <div>
 
@@ -30,7 +35,7 @@ class App extends Component {
             <span className="grid-item phone-heading">Phone</span>
           </div>
           {
-            subscribers.map(sub=>{
+            this.state.subscriberListToShow.map(sub=>{
               return  <div key={sub.id} className="grid-container">
               <span className="grid-item">{sub.name}</span>
               <span className="grid-item">{sub.phone}</span>
